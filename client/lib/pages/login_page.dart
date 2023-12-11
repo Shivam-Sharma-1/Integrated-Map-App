@@ -10,11 +10,11 @@ class LoginPage extends StatelessWidget {
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
           child: Padding(
-            padding: EdgeInsets.all(24),
+            padding: const EdgeInsets.all(24),
             child: Column(
               children: [
-                Spacer(),
-                Text(
+                const Spacer(),
+                const Text(
                   'Hello Welcome',
                   style: TextStyle(
                     color: Colors.white,
@@ -22,31 +22,31 @@ class LoginPage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
-                Text(
+                const Text(
                   'Log in to continue',
                   style: TextStyle(
                     color: Colors.white,
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 TextField(
                   decoration: InputDecoration(
                       hintText: "Username",
-                      border: OutlineInputBorder(
+                      border: const OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(12))),
                       filled: true,
                       fillColor: Colors.white.withOpacity(0.5)),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 TextField(
                   decoration: InputDecoration(
                       hintText: "Password",
-                      border: OutlineInputBorder(
+                      border: const OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(12))),
                       filled: true,
                       fillColor: Colors.white.withOpacity(0.5)),
@@ -60,32 +60,32 @@ class LoginPage extends StatelessWidget {
                     style: TextButton.styleFrom(
                       foregroundColor: Colors.white,
                     ),
-                    child: Text("Forgot Password?"),
+                    child: const Text("Forgot Password?"),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 32,
                 ),
                 SizedBox(
                   height: 48,
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () => {},
+                    onPressed: () => {Navigator.of(context).pushNamed('/home')},
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.amber,
                       foregroundColor: Colors.black,
                     ),
-                    child: Text("Login"),
+                    child: const Text("Login"),
                   ),
                 ),
-                Spacer(),
-                Text(
+                const Spacer(),
+                const Text(
                   "Or Sign in with",
                   style: TextStyle(
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 SizedBox(
@@ -97,7 +97,7 @@ class LoginPage extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
                       foregroundColor: Colors.black,
-                      shape: RoundedRectangleBorder(
+                      shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(50),
                         ),
@@ -111,15 +111,15 @@ class LoginPage extends StatelessWidget {
                           width: 22,
                           height: 22,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 8,
                         ),
-                        Text("Login With google"),
+                        const Text("Login With google"),
                       ],
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 SizedBox(
@@ -129,7 +129,7 @@ class LoginPage extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
                         foregroundColor: Colors.black,
-                        shape: RoundedRectangleBorder(
+                        shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(
                             Radius.circular(50),
                           ),
@@ -143,16 +143,16 @@ class LoginPage extends StatelessWidget {
                             width: 22,
                             height: 22,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 8,
                           ),
-                          Text("Login with Facebook"),
+                          const Text("Login with Facebook"),
                         ],
                       )),
                 ),
                 Row(
                   children: [
-                    Text(
+                    const Text(
                       "Don't have an account",
                       style: TextStyle(
                         color: Colors.white,
@@ -163,14 +163,14 @@ class LoginPage extends StatelessWidget {
                         style: TextButton.styleFrom(
                           foregroundColor: Colors.amber,
                         ),
-                        child: Text(
+                        child: const Text(
                           "Sign Up",
                           style:
                               TextStyle(decoration: TextDecoration.underline),
                         )),
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
               ],
             ),
           ),

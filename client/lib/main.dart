@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:map_integration/pages/login_page.dart';
 
+import 'pages/home_page.dart';
 import 'styles/app_colors.dart';
 
 void main() {
@@ -18,7 +19,11 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: AppColors.background,
         brightness: Brightness.dark,
       ),
-      home: LoginPage(),
+      initialRoute: "/",
+      routes: {
+        '/': (context) => const LoginPage(),
+        '/home': (context) => const HomePage(),
+      },
     );
   }
 }
