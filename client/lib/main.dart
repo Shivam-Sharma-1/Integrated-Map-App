@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:map_integration/pages/login_page.dart';
+import 'package:map_integration/pages/main_page.dart';
 
 import 'pages/home_page.dart';
 import 'styles/app_colors.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),
+        '/main': (context) => const MainPage(),
       },
     );
   }
