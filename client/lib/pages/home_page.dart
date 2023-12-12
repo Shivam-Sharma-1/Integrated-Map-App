@@ -3,6 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../components/post_item.dart';
 import '../components/toolbar.dart';
+import '../config/app_icons.dart';
+import '../config/app_strings.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,14 +13,14 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: Toolbar(
-          title: 'Home Page',
+          title: AppStrings.appName,
           actions: [
             IconButton(
               onPressed: () {
                 print('Clicked');
               },
               icon: SvgPicture.asset(
-                'assets/svg/ic_location.svg',
+                AppIcons.icLocation,
               ),
             ),
           ],
