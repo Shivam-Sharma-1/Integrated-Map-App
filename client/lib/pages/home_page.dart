@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:map_integration/components/post_item.dart';
-import 'package:map_integration/styles/app_colors.dart';
-import 'package:map_integration/styles/app_text.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import '../components/post_item.dart';
+import '../components/toolbar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,11 +10,18 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: AppColors.background,
-          title: const Text("%minute flutter"),
-          centerTitle: false,
-          actions: const [Icon(Icons.location_on_outlined)],
+        appBar: Toolbar(
+          title: 'Home Page',
+          actions: [
+            IconButton(
+              onPressed: () {
+                print('Clicked');
+              },
+              icon: SvgPicture.asset(
+                'assets/svg/ic_location.svg',
+              ),
+            ),
+          ],
         ),
         body: ListView(
           children: mockUsersFromServer(),
@@ -24,7 +32,7 @@ class HomePage extends StatelessWidget {
 List<Widget> mockUsersFromServer() {
   List<Widget> users = [];
   for (var i = 0; i < 10000; i++) {
-    users.add(PostItem());
+    users.add(const PostItem());
   }
 
   return users;
