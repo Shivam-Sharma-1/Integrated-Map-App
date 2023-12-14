@@ -33,17 +33,17 @@ class _MainPageState extends State<MainPage> {
   }
 
   final pages = [
-    HomePage(),
-    Center(
+    const HomePage(),
+    const Center(
       child: Text('Favorite'),
     ),
-    Center(
+    const Center(
       child: Text('Add Post'),
     ),
-    Center(
+    const Center(
       child: Text('Messages'),
     ),
-    ProfilePage()
+    const ProfilePage()
   ];
 }
 
@@ -68,7 +68,7 @@ class MyBottomNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 87,
-      margin: EdgeInsets.all(24),
+      margin: const EdgeInsets.all(24),
       child: Stack(
         children: [
           Positioned(
@@ -77,7 +77,7 @@ class MyBottomNavigation extends StatelessWidget {
             top: 17,
             child: Container(
               height: 70,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(25))),
               child: Row(
@@ -96,7 +96,7 @@ class MyBottomNavigation extends StatelessWidget {
                         current: currentIndex,
                         name: Menus.favorite),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Expanded(
                     child: BottomNavigationItem(
                         onPressed: () => onTap(Menus.messages),
@@ -125,7 +125,7 @@ class MyBottomNavigation extends StatelessWidget {
                 width: 64,
                 height: 64,
                 padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: AppColors.primary,
                   shape: BoxShape.circle,
                 ),
