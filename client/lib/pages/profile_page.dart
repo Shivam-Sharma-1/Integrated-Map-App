@@ -26,7 +26,7 @@ class ProfilePage extends StatelessWidget {
                   Navigator.of(context).pushNamed(AppRoutes.editProfile);
                   break;
                 case ProfileMenu.logout:
-                  print('log out');
+                  debugPrint('log out');
                   break;
                 default:
               }
@@ -35,45 +35,45 @@ class ProfilePage extends StatelessWidget {
             itemBuilder: (context) {
               return [
                 const PopupMenuItem(
-                  child: Text(AppStrings.edit),
                   value: ProfileMenu.edit,
+                  child: Text(AppStrings.edit),
                 ),
                 const PopupMenuItem(
-                  child: Text(AppStrings.logout),
                   value: ProfileMenu.logout,
+                  child: Text(AppStrings.logout),
                 ),
               ];
             },
           )
         ],
       ),
-      body: Column(
+      body: const Column(
         children: [
-          const UserAvatar(
+          UserAvatar(
             size: 90,
           ),
-          const SizedBox(
+          SizedBox(
             height: 24,
           ),
-          const Text(
+          Text(
             'Shivam',
             style: AppText.header2,
           ),
-          const SizedBox(
+          SizedBox(
             height: 12,
           ),
-          const Text(
+          Text(
             'Madahascar',
             style: AppText.subtitle3,
           ),
-          const SizedBox(
+          SizedBox(
             height: 24,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Column(
-                children: const [
+                children: [
                   Text(
                     '472',
                     style: AppText.header2,
@@ -82,7 +82,7 @@ class ProfilePage extends StatelessWidget {
                 ],
               ),
               Column(
-                children: const [
+                children: [
                   Text(
                     '119',
                     style: AppText.header2,
@@ -91,7 +91,7 @@ class ProfilePage extends StatelessWidget {
                 ],
               ),
               Column(
-                children: const [
+                children: [
                   Text(
                     '860',
                     style: AppText.header2,
@@ -101,7 +101,7 @@ class ProfilePage extends StatelessWidget {
               )
             ],
           ),
-          const Divider(thickness: 1, height: 24),
+          Divider(thickness: 1, height: 24),
         ],
       ),
     );
