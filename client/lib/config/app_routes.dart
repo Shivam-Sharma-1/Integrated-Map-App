@@ -1,12 +1,16 @@
+import '../pages/edit_profile_page.dart';
 import '../pages/home_page.dart';
 import '../pages/login_page.dart';
 import '../pages/main_page.dart';
+import '../pages/nearby_page.dart';
 
 class AppRoutes {
   static final pages = {
     login: (context) => const LoginPage(),
-    home: (context) => HomePage(),
-    main: (context) => MainPage(),
+    home: (context) => const HomePage(),
+    main: (context) => const MainPage(),
+    editProfile: (context) => const EditProfilePage(),
+    nearby: (context) => const NearbyPage(),
   };
 
   static const login = '/';
