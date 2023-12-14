@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../components/post_item.dart';
 import '../components/toolbar.dart';
 import '../config/app_icons.dart';
+import '../config/app_routes.dart';
 import '../config/app_strings.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,7 +18,7 @@ class HomePage extends StatelessWidget {
           actions: [
             IconButton(
               onPressed: () {
-                print('Clicked');
+                Navigator.of(context).pushNamed(AppRoutes.nearby);
               },
               icon: SvgPicture.asset(
                 AppIcons.icLocation,
