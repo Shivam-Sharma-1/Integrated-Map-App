@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../config/app_icons.dart';
 import '../config/app_routes.dart';
 import '../config/app_strings.dart';
+import '../provider/app_repo.dart';
+import '../provider/post_provider.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -37,6 +40,8 @@ class LoginPage extends StatelessWidget {
                 ),
                 const Spacer(),
                 TextField(
+                  onChanged: (value) =>
+                      {context.read<LoginProvider>().username = value},
                   decoration: InputDecoration(
                       hintText: AppStrings.username,
                       border: const OutlineInputBorder(
@@ -48,6 +53,8 @@ class LoginPage extends StatelessWidget {
                   height: 16,
                 ),
                 TextField(
+                  onChanged: (value) =>
+                      {context.read<LoginProvider>().password = value},
                   decoration: InputDecoration(
                       hintText: AppStrings.password,
                       border: const OutlineInputBorder(
@@ -98,7 +105,12 @@ class LoginPage extends StatelessWidget {
                   height: 48,
                   child: ElevatedButton(
                     onPressed: () {
-                      print('Google is clicked');
+                      context.read<LoginProvider>().login().then((value) => {
+                            context.read<AppRepo>().user = value.user,
+                            context.read<AppRepo>().token = value.token,
+                            Navigator.of(context)
+                                .pushReplacementNamed(AppRoutes.main)
+                          });
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
